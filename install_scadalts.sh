@@ -45,17 +45,17 @@ echo "Installing Scada-LTC "
 
 mkdir -p /var/lib/tomcat9/webapps/ScadaBR
 
-unzip ScadaBR.war -d //var/lib/tomcat9/webapps/ScadaBR/webapps/ScadaBR
-sudo rm //var/lib/tomcat9/webapps/ScadaBR/webapps/ScadaBR/WEB-INF/classes/env.properties
-cp env.properties //var/lib/tomcat9/webapps/ScadaBR/webapps/ScadaBR/WEB-INF/classes/
+unzip ScadaBR.war -d /var/lib/tomcat9/webapps/ScadaBR/webapps/ScadaBR
+sudo rm /var/lib/tomcat9/webapps/ScadaBR/webapps/ScadaBR/WEB-INF/classes/env.properties
+cp env.properties /var/lib/tomcat9/webapps/ScadaBR/webapps/ScadaBR/WEB-INF/classes/
 
 
 echo "Removing install folder"
  
-sudo rm -rf ScadaLTS_RPI_Installer
+sudo rm -rf ScadaLTS-Test
 
 echo "Removing ScadaBR.war file"
-
+sudo rm -rf ScadaBR.war
 echo "ScadaLTS Install Complete!"
 
 
