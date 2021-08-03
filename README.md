@@ -3,24 +3,24 @@
 - If git does not work? install git
  #### sudo  apt-get install git
 
-## ScadaLTS Installer for Rasberry PI
+## ScadaLTS Installer 
 
    - default-jdk_1.11-71
    - apache-tomcat-9.0.50
    - mariadb-server_10.3.29-0
    - Scada-LTS 2.5
  
-- Tested on (Buster 32bit RPI 4)
+- Tested on (Debian Buster amd64  VirtualBox)  
 
 ## ScadaLTS Installation:
 - Download the sources 
  
 
-git clone https://github.com/carl1961/ScadaLTS_RPI_Installer.git
+git clone https://github.com/carl1961/ScadaLTS-Test.git
 
 - Move to install folder
 
-#### cd ScadaLTS_RPI_Installer
+#### cd ScadaLTS-Test
 
 - Give execute permissions to `install_scadalts.sh`
  
@@ -33,7 +33,7 @@ You may have to answer Y for some installs
 ## Remove ScadaLTS Installation:
 - Download the sources 
 - 
-wget https://raw.githubusercontent.com/carl1961/ScadaLTS_RPI_Installer/main/remove_scadalts.sh
+wget https://raw.githubusercontent.com/carl1961/ScadaLTS-Test/main/remove_scadalts.sh
 
 - Give execute permissions to`remove_scadalts.sh` 
  
@@ -46,9 +46,6 @@ wget https://raw.githubusercontent.com/carl1961/ScadaLTS_RPI_Installer/main/remo
 ## Note: 
 
 MariaDB Server, and Scada-LTS Database Auto filled by install_scadalts.sh
-
-When Finish, Rasberry PI will reboot after 5 seconds
-
 
 To access your Raspberry Pi’s MySQL server and start making changes to your databases, you can enter the following command.
 
