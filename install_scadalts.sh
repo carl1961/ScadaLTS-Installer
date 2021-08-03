@@ -2,7 +2,11 @@
 #email: cmshelton2021@protonmail.com
 # date 7/29/2021
 echo "Welcome to ScadaLTS installer!"
-sleep 2
+
+sudo apt-get update
+sudo apt-get install software-properties-common dirmngr
+sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+
 echo "   * Creating Install Folder..."
 mkdir -p  /opt/ScadaLTS 
 
@@ -11,17 +15,17 @@ cp   env.properties /opt/ScadaLTS
 
 cd
 
-apt-get update
+sudo apt-get install software-properties-common dirmngr
+sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
 echo "Installing Tomcat"
-sleep 2
 
 apt  install -y tomcat9  
 echo "Installing Default Jdk"
-sleep 2
+
 #install java 11
 apt install -y default-jdk
 echo "Install MariaDB Server"
-sleep 2
+
 # MySQL/MariaDB
 apt install -y mariadb-server
 
@@ -45,7 +49,7 @@ sudo mysql -e "DROP USER IF EXISTS ''@'$(hostname)'"
 sudo mysql -e "DROP DATABASE IF EXISTS test"
  
 echo "Creating scadalts database..."
-sleep 2 
+
 sudo mysql -e "create user 'scadalts' identified by 'scadalts'"
 sudo mysql -e "create database if not exists scadalts"
 sudo mysql -e "grant all privileges on scadalts.* to 'scadalts'"
@@ -53,7 +57,7 @@ sudo mysql -e "flush privileges"
 
 
 echo "Installing Scada-LTS "
-sleep 2
+
 echo " Extracting ScadaBR into Tomcat"
 mkdir -p /var/lib/tomcat9/webapps/ScadaBR
 cd   /opt/ScadaLTS 
