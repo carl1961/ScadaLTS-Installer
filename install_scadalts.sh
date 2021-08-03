@@ -15,7 +15,7 @@ cp   env.properties /opt/ScadaLTS
 cd
 
 sudo apt-get install software-properties-common dirmngr
-sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+
 echo "Installing Tomcat"
 
 apt  install -y tomcat9  
