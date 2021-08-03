@@ -30,18 +30,6 @@ git clone https://github.com/carl1961/ScadaLTS-Test.git
 You may have to answer Y for some installs
 #### sudo ./install_scadalts.sh
 
-## Remove ScadaLTS Installation:
-- Download the sources 
-- 
-wget https://raw.githubusercontent.com/carl1961/ScadaLTS-Test/main/remove_scadalts.sh
-
-- Give execute permissions to`remove_scadalts.sh` 
- 
-#### sudo chmod +x remove_scadalts.sh
-
-- To remove ScadaBR, run the `remove_scadalts.sh` script via the command `./remove_scadalts.sh`
-
-#### sudo ./remove_scadalts.sh
 
 ## Note: 
 
