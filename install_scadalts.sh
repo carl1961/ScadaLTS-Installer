@@ -3,9 +3,8 @@
 # date 7/29/2021
 echo "Welcome to ScadaLTS installer!"
 
-sudo apt-get update
-sudo apt-get install software-properties-common dirmngr
-sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+apt-get update
+
 
 echo "   * Creating Install Folder..."
 mkdir -p  /opt/ScadaLTS 
