@@ -3,15 +3,12 @@
 #email: cmshelton2021@protonmail.com
 # date 7/29/2021
 echo -e "Welcome to ScadaLTS installer!"
-CURRENT_FOLDER=$(pwd)
-INSTALL_FOLDER=/opt/ScadaLTS
-
 
 echo -e "   * Creating Install Folder..."
-mkdir -p  $INSTALL_FOLDER 
-cd   ${INSTALL_FOLDER}
-cp   ${CURRENT_FOLDER}/ScadaBR.war $INSTALL_FOLDER
-cp   ${CURRENT_FOLDER}/env.properties $INSTALL_FOLDER
+mkdir -p  /opt/ScadaLTS 
+
+cp   ScadaBR.war /opt/ScadaLTS 
+cp   env.properties /opt/ScadaLTS 
 
 cd
 
@@ -56,12 +53,12 @@ sudo mysql -e "flush privileges"
 
 echo -e "   * Extracting ScadaBR into Tomcat..."
 mkdir -p /var/lib/tomcat9/webapps/ScadaBR
-cd   $INSTALL_FOLDER
-unzip ${INSTALL_FOLDER}/ScadaBR.war -d /var/lib/tomcat9/webapps/ScadaBR
+cd   /opt/ScadaLTS 
+unzip ScadaBR.war -d /var/lib/tomcat9/webapps/ScadaBR
 
 sudo rm /var/lib/tomcat9/webapps/ScadaBR/WEB-INF/classes/env.properties
 
-sudo cp ${INSTALL_FOLDER}/env.properties /var/lib/tomcat9/webapps/ScadaBR/WEB-INF/classes/
+sudo cp env.properties /var/lib/tomcat9/webapps/ScadaBR/WEB-INF/classes/
 
 echo -e " - Starting Tomcat9: /var/lib/tomcat9/bin/startup.sh"
 sudo /var/lib/tomcat9/bin/startup.sh
@@ -69,7 +66,7 @@ sudo /var/lib/tomcat9/bin/startup.sh
 #echo -e "Cleaning Up!"
 
 #echo -e "Removing Install Folder"
-sudo rm -rf  $INSTALL_FOLDER 
+sudo rm -rf  /opt/ScadaLTS  
 #echo -e "Removing ScadaLTS-Test Folder"
 cd 
 sudo rm -rf ScadaLTS-Test
