@@ -64,11 +64,11 @@ echo -e " - Starting Tomcat9: /var/lib/tomcat9/bin/startup.sh"
 sudo /var/lib/tomcat9/bin/startup.sh
 
 #echo -e "Cleaning Up!"
-
+cd 
 #echo -e "Removing Install Folder"
 sudo rm -rf  /opt/ScadaLTS  
 #echo -e "Removing ScadaLTS-Test Folder"
-cd 
+
 sudo rm -rf ScadaLTS-Test
 echo -e "ScadaLTS Install Complete!"
 
