@@ -6,18 +6,18 @@ echo "Welcome to ScadaLTS installer!"
 apt-get update
 echo "Installing Tomcat"
 
-apt-get install tomcat9  -y
+apt  install -y tomcat9  
 echo "Installing Default Jdk"
 
 #install java 11
-apt-get install default-jdk -y
+apt install -y default-jdk
 echo "Install MariaDB Server"
 
 # MySQL/MariaDB
-apt-get install -y mariadb-server
+apt install -y mariadb-server
 # MySQL connector
-apt-get install  libmariadb-java -y
-apt-get install  librxtx-java -y
+apt install -y libmariadb-java
+apt install -y librxtx-java
 sudo systemctl enable mariadb
 sudo systemctl start mariadb
 root_password=admin
