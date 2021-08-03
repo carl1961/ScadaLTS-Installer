@@ -1,23 +1,36 @@
+#!/bin/bash
 #Carl Shelton
 #email: cmshelton2021@protonmail.com
 # date 7/29/2021
-echo "Welcome to ScadaLTS installer!"
+echo -e "Welcome to ScadaLTS installer!"
+CURRENT_FOLDER=$(pwd)
+INSTALL_FOLDER=/opt/ScadaLTS
+
+
+echo -e "   * Creating Install Folder..."
+mkdir -p  $INSTALL_FOLDER 
+cd   ${INSTALL_FOLDER}
+cp   ${CURRENT_FOLDER}/ScadaBR.war $INSTALL_FOLDER
+cp   ${CURRENT_FOLDER}/env.properties $INSTALL_FOLDER
+
+cd
 
 apt-get update
-echo "Installing Tomcat"
+echo -e "Installing Tomcat"
 
-apt  install -y tomcat9  
-echo "Installing Default Jdk"
+apt-get  install -y tomcat9  
+echo -e "Installing Default Jdk"
 
 #install java 11
-apt install -y default-jdk
-echo "Install MariaDB Server"
+apt-get install -y default-jdk
+echo -e "Install MariaDB Server"
 
 # MySQL/MariaDB
-apt install -y mariadb-server
+apt-get install -y mariadb-server
 # MySQL connector
-apt install -y libmariadb-java
-apt install -y librxtx-java
+apt-get install -y libmariadb-java
+
+sudo apt-get install librxtx-java
 sudo systemctl enable mariadb
 sudo systemctl start mariadb
 root_password=admin
@@ -32,7 +45,7 @@ sudo mysql -e "DROP USER IF EXISTS ''@'$(hostname)'"
 # Kill off the demo database
 sudo mysql -e "DROP DATABASE IF EXISTS test"
  
-echo "Creating scadalts database..."
+echo -e "Creating scadalts database..."
 
 sudo mysql -e "create user 'scadalts' identified by 'scadalts'"
 sudo mysql -e "create database if not exists scadalts"
@@ -40,22 +53,26 @@ sudo mysql -e "grant all privileges on scadalts.* to 'scadalts'"
 sudo mysql -e "flush privileges"
 
 
-echo "Installing Scada-LTC "
 
-
+echo -e "   * Extracting ScadaBR into Tomcat..."
 mkdir -p /var/lib/tomcat9/webapps/ScadaBR
+cd   $INSTALL_FOLDER
+unzip ${INSTALL_FOLDER}/ScadaBR.war -d /var/lib/tomcat9/webapps/ScadaBR
 
-unzip ScadaBR.war -d /var/lib/tomcat9/webapps/ScadaBR/webapps/ScadaBR
-sudo rm /var/lib/tomcat9/webapps/ScadaBR/webapps/ScadaBR/WEB-INF/classes/env.properties
-cp env.properties /var/lib/tomcat9/webapps/ScadaBR/webapps/ScadaBR/WEB-INF/classes/
+sudo rm /var/lib/tomcat9/webapps/ScadaBR/WEB-INF/classes/env.properties
 
+sudo cp ${INSTALL_FOLDER}/env.properties /var/lib/tomcat9/webapps/ScadaBR/WEB-INF/classes/
 
-echo "Removing install folder"
- 
+echo -e " - Starting Tomcat9: /var/lib/tomcat9/bin/startup.sh"
+sudo /var/lib/tomcat9/bin/startup.sh
+
+#echo -e "Cleaning Up!"
+
+#echo -e "Removing Install Folder"
+sudo rm -rf  $INSTALL_FOLDER 
+#echo -e "Removing ScadaLTS-Test Folder"
+cd 
 sudo rm -rf ScadaLTS-Test
-
-echo "Removing ScadaBR.war file"
-sudo rm -rf ScadaBR.war
-echo "ScadaLTS Install Complete!"
+echo -e "ScadaLTS Install Complete!"
 
 
