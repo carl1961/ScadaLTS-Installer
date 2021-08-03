@@ -10,17 +10,17 @@
    - mariadb-server_10.3.29-0
    - Scada-LTS 2.5
  
-- Tested on (Debian Buster amd64  VirtualBox)  
+- Tested on (RPI 4),(Debian Buster amd64  VirtualBox)  
 
 ## ScadaLTS Installation:
 - Download the sources 
  
 
-git clone https://github.com/carl1961/ScadaLTS-Test.git
+git clone https://github.com/carl1961/ScadaLTS-Installer.git
 
 - Move to install folder
 
-#### cd ScadaLTS-Test
+#### cd ScadaLTS-Installer
 
 - Give execute permissions to `install_scadalts.sh`
  
