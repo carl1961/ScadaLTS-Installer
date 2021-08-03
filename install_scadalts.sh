@@ -52,7 +52,7 @@ sudo mysql -e "grant all privileges on scadalts.* to 'scadalts'"
 sudo mysql -e "flush privileges"
 
 
-echo "Installing Scada-LTS "
+echo "Installing Scada-LTS Files"
 
 
 mkdir -p /var/lib/tomcat9/webapps/ScadaBR
@@ -61,7 +61,7 @@ unzip ScadaBR.war -d /var/lib/tomcat9/webapps/ScadaBR
 sudo rm /var/lib/tomcat9/webapps/ScadaBR/WEB-INF/classes/env.properties
 cp env.properties /var/lib/tomcat9/webapps/ScadaBR/WEB-INF/classes/
 
-echo "Starting Scada-LTS "
+
 cd
 
 
@@ -72,10 +72,10 @@ cd
  
 #sudo rm -rf /opt/scadalts
 
-#echo "Removing ScadaLTS-Test Folder"
+#echo "Removing ScadaLTS-Installer Folder"
 
-#sudo rm -rf ScadaLTS-Test
+#sudo rm -rf ScadaLTS-Installer
 
 echo "ScadaLTS Install Complete!"
-
+echo "Please Reboot to Start Scada-LTS "
 
