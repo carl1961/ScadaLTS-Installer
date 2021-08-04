@@ -1,4 +1,4 @@
-# WORK IN PROGRESS Running!
+# Tested on (RPI3),(RPI 4),(Debian Buster amd64  VirtualBox)
 
 - If git does not work? install git
  #### sudo  apt-get install git
@@ -10,7 +10,6 @@
    - mariadb-server_10.3.29-0 . downloads from internet source
    - Scada-LTS 2.5   .......... Latest ScadaLTS as of 8-3-2021
    -    Scada-LTS 2.5 installs to  /var/lib/tomcat9/webapps
-- Tested on (RPI3),(RPI 4),(Debian Buster amd64  VirtualBox)  
 
 ## ScadaLTS Installation:
 - Download the sources 
