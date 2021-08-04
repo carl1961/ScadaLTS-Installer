@@ -3,14 +3,14 @@
 - If git does not work? install git
  #### sudo  apt-get install git
 
-## ScadaLTS Installer 
+## ScadaLTS Installer Installs
 
-   - default-jdk_1.11-71
-   - apache-tomcat-9.0.50
-   - mariadb-server_10.3.29-0
-   - Scada-LTS 2.5
- 
-- Tested on (RPI 4),(Debian Buster amd64  VirtualBox)  
+   - default-jdk_1.11-71 ...... downloads from internet source
+   - apache-tomcat-9.0.50 ..... downloads from internet source
+   - mariadb-server_10.3.29-0 . downloads from internet source
+   - Scada-LTS 2.5   .......... Latest ScadaLTS as of 8-3-2021
+     Scada-LTS 2.5 installs to  /var/lib/tomcat9/webapps
+- Tested on (RPI3),(RPI 4),(Debian Buster amd64  VirtualBox)  
 
 ## ScadaLTS Installation:
 - Download the sources 
