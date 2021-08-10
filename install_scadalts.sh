@@ -1,5 +1,5 @@
-﻿#Carl Shelton
-#email: cmshelton2021@protonmail.com
+# Carl Shelton
+# email: cmshelton2021@protonmail.com
 # date 7/29/2021
 echo "Welcome to ScadaLTS installer!"
 
