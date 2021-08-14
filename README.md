@@ -4,7 +4,7 @@
 - If git does not work? install git
  #### sudo  apt-get install git
 
-## ScadaLTS Installer Installs
+## ScadaLTS Installer Installs As of 8/2020 these versions
 
    - default-jdk_1.11-71 ...... downloads from internet source
    - apache-tomcat-9.0.50 ..... downloads from internet source
