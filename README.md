@@ -1,4 +1,5 @@
 # Tested on (RPI3),(RPI 4),(Debian Buster amd64  VirtualBox)
+# (OrangePI PC2 Armbian Buster)
 
 - If git does not work? install git
  #### sudo  apt-get install git
